@@ -16,6 +16,9 @@
 		4E215D041DCDC6C900192433 /* TouchAndGoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E215D031DCDC6C900192433 /* TouchAndGoTests.swift */; };
 		4E215D0F1DCDC6C900192433 /* TouchAndGoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E215D0E1DCDC6C900192433 /* TouchAndGoUITests.swift */; };
 		4E215D1E1DCDE23300192433 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E215D1D1DCDE23300192433 /* SwiftyJSON.swift */; };
+		4E215D201DCE4C5F00192433 /* ButtonsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E215D1F1DCE4C5F00192433 /* ButtonsCollectionViewController.swift */; };
+		4E215D221DCE54B200192433 /* ButtonStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E215D211DCE54B200192433 /* ButtonStruct.swift */; };
+		4E215D241DCE582500192433 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E215D231DCE582500192433 /* ButtonCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		4E215D101DCDC6C900192433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E215D1C1DCDC89600192433 /* TouchAndGo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TouchAndGo.entitlements; sourceTree = "<group>"; };
 		4E215D1D1DCDE23300192433 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		4E215D1F1DCE4C5F00192433 /* ButtonsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsCollectionViewController.swift; sourceTree = "<group>"; };
+		4E215D211DCE54B200192433 /* ButtonStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStruct.swift; sourceTree = "<group>"; };
+		4E215D231DCE582500192433 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonCollectionViewCell.swift; path = ../ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,9 @@
 				4E215CFA1DCDC6C900192433 /* Info.plist */,
 				4E215CF21DCDC6C900192433 /* TouchAndGo.xcdatamodeld */,
 				4E215D1D1DCDE23300192433 /* SwiftyJSON.swift */,
+				4E215D1F1DCE4C5F00192433 /* ButtonsCollectionViewController.swift */,
+				4E215D231DCE582500192433 /* ButtonCollectionViewCell.swift */,
+				4E215D211DCE54B200192433 /* ButtonStruct.swift */,
 			);
 			path = TouchAndGo;
 			sourceTree = "<group>";
@@ -279,8 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E215CF41DCDC6C900192433 /* TouchAndGo.xcdatamodeld in Sources */,
+				4E215D201DCE4C5F00192433 /* ButtonsCollectionViewController.swift in Sources */,
 				4E215CEE1DCDC6C800192433 /* ViewController.swift in Sources */,
 				4E215CEC1DCDC6C800192433 /* AppDelegate.swift in Sources */,
+				4E215D221DCE54B200192433 /* ButtonStruct.swift in Sources */,
+				4E215D241DCE582500192433 /* ButtonCollectionViewCell.swift in Sources */,
 				4E215D1E1DCDE23300192433 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ButtonsCollectionViewController: UICollectionViewController {
+class ButtonsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     // Define identifier
     let notificationName = Notification.Name("serviceRequested")
     
     // MARK: - Properties
     fileprivate let reuseIdentifier = "ButtonCell"
-    fileprivate let itemsPerRow: CGFloat = 3
+    fileprivate let itemsPerRow: CGFloat = 2
 
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     fileprivate var buttons = [ButtonStruct]()
@@ -28,8 +28,11 @@ class ButtonsCollectionViewController: UICollectionViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.getServiceRequested(withNotification:)), name:notificationName, object: nil)
         
-        self.buttons.append(ButtonStruct(location: "1Amen", serviceRequested: false))
-        self.buttons.append(ButtonStruct(location: "1Awomen", serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "1", location: "Men", serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "1", location: "Women", serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "2", location: "Men", serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "2", location: "Women", serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "2", location: "Family", serviceRequested: false))
 
         // Do any additional setup after loading the view.
     }
@@ -78,6 +81,10 @@ class ButtonsCollectionViewController: UICollectionViewController {
         print("cellForItemAt \(indexPath.row)")
         
         cell.locationLabel.text = self.buttons[indexPath.row].location
+        cell.floorLabel.text = self.buttons[indexPath.row].floor
+        
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
         
         if (self.buttons[indexPath.row].serviceRequested) {
             cell.backgroundColor = UIColor.red

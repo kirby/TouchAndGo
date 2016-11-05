@@ -11,5 +11,6 @@ import UIKit
 class ButtonCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var floorLabel: UILabel!    
     
 }

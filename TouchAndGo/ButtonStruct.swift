@@ -9,6 +9,9 @@
 import Foundation
 
 struct ButtonStruct {
-    let location : String
+    
+    var floor: String
+    var location : String
     var serviceRequested : Bool
+    
 }

@@ -20,12 +20,23 @@ class ButtonCollectionViewCell: UICollectionViewCell {
     }
     
     func longPress(gesture: UILongPressGestureRecognizer) {
+        
         let target = gesture.view!
         
+        let backgroundColor = target.backgroundColor
+        
         switch gesture.state {
-            case .changed:
-//                target.backgroundColor = UIColor.blue
+            
+            case .began:
+                OperationQueue.main.addOperation({ () -> Void in
+                    self.backgroundColor = UIColor.blue
+                })
+            
+            case .ended:
                 self.postRequest()
+                OperationQueue.main.addOperation({ () -> Void in
+                    self.backgroundColor = backgroundColor
+                })
                 
                 break
             default: break
@@ -40,7 +51,6 @@ class ButtonCollectionViewCell: UICollectionViewCell {
         let request = NSMutableURLRequest(url: url as URL)
         request.httpMethod = "POST"
         
-//        let params = "serviceRequested=false"
         let params = [ "serviceRequested": false ]
         do {
             try request.httpBody = JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
@@ -60,7 +70,11 @@ class ButtonCollectionViewCell: UICollectionViewCell {
             }
             
             let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            print(dataString!)
+            print("postRequest response = \(dataString!)")
+            
+            OperationQueue.main.addOperation({ () -> Void in
+                self.backgroundColor = UIColor.green
+            })
             
         }
         

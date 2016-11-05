@@ -88,6 +88,7 @@
                                 <connections>
                                     <outlet property="floorLabel" destination="KDz-FF-ryK" id="F11-Vk-gwX"/>
                                     <outlet property="locationLabel" destination="Sar-dt-seb" id="Khd-bq-CAd"/>
+                                    <segue destination="OKz-st-tFt" kind="show" id="DkE-Ky-qaN"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -96,11 +97,54 @@
                             <outlet property="delegate" destination="UFR-kl-uC0" id="d6o-la-eTV"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="L04-sZ-yeR"/>
+                    <navigationItem key="navigationItem" id="L04-sZ-yeR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fk3-uN-mK2"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORV-Cl-V3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1760.8" y="34.632683658170919"/>
+        </scene>
+        <!--Button Detail View Controller-->
+        <scene sceneID="t3v-nu-vlF">
+            <objects>
+                <viewController id="OKz-st-tFt" customClass="ButtonDetailViewController" customModule="TouchAndGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nd6-9f-ac3"/>
+                        <viewControllerLayoutGuide type="bottom" id="ozR-4X-skj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TQ6-s5-Av2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Floor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETR-31-xlY">
+                                <rect key="frame" x="16" y="89" width="39" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="HX1-FL-Zvg"/>
+                                    <constraint firstAttribute="width" constant="39" id="Q2g-Xd-Jh3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FcX-Zm-yed">
+                                <rect key="frame" x="16" y="118" width="343" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ETR-31-xlY" firstAttribute="top" secondItem="Nd6-9f-ac3" secondAttribute="bottom" constant="25" id="2qX-wV-PCy"/>
+                            <constraint firstItem="ETR-31-xlY" firstAttribute="leading" secondItem="TQ6-s5-Av2" secondAttribute="leading" constant="16" id="guJ-GT-6W5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="floorPicker" destination="FcX-Zm-yed" id="jN1-WA-r3N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ofv-uq-Rna" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2645.5999999999999" y="34.632683658170919"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yfm-ry-aXe">

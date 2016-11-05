@@ -32,7 +32,10 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         self.buttons.append(ButtonStruct(floor: "1", location: "Women", serviceRequested: false))
         self.buttons.append(ButtonStruct(floor: "2", location: "Men", serviceRequested: false))
         self.buttons.append(ButtonStruct(floor: "2", location: "Women", serviceRequested: false))
-        self.buttons.append(ButtonStruct(floor: "2", location: "Family", serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "2", location: "Family", serviceRequested: true))
+        self.buttons.append(ButtonStruct(floor: "3", location: "Men", serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "3", location: "Women", serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "3", location: "Family", serviceRequested: false))
 
         // Do any additional setup after loading the view.
     }
@@ -48,7 +51,7 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         
         print("serviceRequested = \(serviceRequested)")
         
-        self.buttons[0].serviceRequested = serviceRequested
+        self.buttons[2].serviceRequested = serviceRequested
         self.collectionView?.reloadData()
     }
 

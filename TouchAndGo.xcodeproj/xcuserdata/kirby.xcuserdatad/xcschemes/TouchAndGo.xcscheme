@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4E215CE71DCDC6C800192433"
+               BuildableName = "TouchAndGo.app"
+               BlueprintName = "TouchAndGo"
+               ReferencedContainer = "container:TouchAndGo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4E215CFE1DCDC6C900192433"
+               BuildableName = "TouchAndGoTests.xctest"
+               BlueprintName = "TouchAndGoTests"
+               ReferencedContainer = "container:TouchAndGo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4E215D091DCDC6C900192433"
+               BuildableName = "TouchAndGoUITests.xctest"
+               BlueprintName = "TouchAndGoUITests"
+               ReferencedContainer = "container:TouchAndGo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4E215CE71DCDC6C800192433"
+            BuildableName = "TouchAndGo.app"
+            BlueprintName = "TouchAndGo"
+            ReferencedContainer = "container:TouchAndGo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4E215CE71DCDC6C800192433"
+            BuildableName = "TouchAndGo.app"
+            BlueprintName = "TouchAndGo"
+            ReferencedContainer = "container:TouchAndGo.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4E215CE71DCDC6C800192433"
+            BuildableName = "TouchAndGo.app"
+            BlueprintName = "TouchAndGo"
+            ReferencedContainer = "container:TouchAndGo.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

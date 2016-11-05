@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            // actions based on whether notifications were authorized or not
+        }
+        application.registerForRemoteNotifications()
         return true
+    }
+
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("didRegisterForRemoteNotificationsWithDeviceToken")
+        
+        let token = String(format: "%@", deviceToken as CVarArg)
+            .trimmingCharacters(in: CharacterSet(charactersIn: "<>"))
+            .replacingOccurrences(of: " ", with: "")
+        
+        print(token)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("didFailToRegisterForRemoteNotificationsWithError")
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        print("didReceiveRemoteNotification")
+        print(userInfo)
+
+        let json = JSON(userInfo)
+        print("\(json.description)")
+        
+        let serviceRequested = json["aps"]["serviceRequested"].boolValue
+        
+        let notificationName = Notification.Name("serviceRequested")
+
+        if (serviceRequested) {
+            NotificationCenter.default.post(name: notificationName, object: true)
+        } else {
+            NotificationCenter.default.post(name: notificationName, object: false)
+        }
+        
+        print("serviceRequested = \(serviceRequested)")
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

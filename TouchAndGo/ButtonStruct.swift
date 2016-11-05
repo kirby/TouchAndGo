@@ -8,10 +8,17 @@
 
 import Foundation
 
+enum LocationType {
+    case Men
+    case Women
+    case Family
+}
+
 struct ButtonStruct {
     
     var floor: String
     var location : String
+    var locationType: LocationType
     var serviceRequested : Bool
     
 }

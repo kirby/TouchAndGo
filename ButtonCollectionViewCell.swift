@@ -12,6 +12,9 @@ class ButtonCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var floorLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var liveButton = false
     
     required init?(coder aDecoder: NSCoder) {
         
@@ -20,6 +23,10 @@ class ButtonCollectionViewCell: UICollectionViewCell {
     }
     
     func longPress(gesture: UILongPressGestureRecognizer) {
+        
+        if (!liveButton) {
+            return
+        }
         
         let target = gesture.view!
         

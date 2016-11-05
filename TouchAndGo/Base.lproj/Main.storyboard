@@ -52,14 +52,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonCell" id="xb4-la-x2j" customClass="ButtonCollectionViewCell" customModule="TouchAndGo" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.25" contentMode="center" reuseIdentifier="ButtonCell" id="xb4-la-x2j" customClass="ButtonCollectionViewCell" customModule="TouchAndGo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sar-dt-seb">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sar-dt-seb">
                                             <rect key="frame" x="8" y="52" width="134" height="47"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="47" id="fdH-pD-xUB"/>
@@ -75,18 +75,25 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k5n-Gq-lzZ">
+                                            <rect key="frame" x="25" y="25" width="100" height="100"/>
+                                        </imageView>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Sar-dt-seb" firstAttribute="centerY" secondItem="xb4-la-x2j" secondAttribute="centerY" id="1g0-4j-iyh"/>
                                     <constraint firstItem="Sar-dt-seb" firstAttribute="leading" secondItem="xb4-la-x2j" secondAttribute="leadingMargin" id="6kD-Ox-lJo"/>
                                     <constraint firstItem="Sar-dt-seb" firstAttribute="centerX" secondItem="xb4-la-x2j" secondAttribute="centerX" id="GNO-Of-sen"/>
                                     <constraint firstItem="Sar-dt-seb" firstAttribute="trailing" secondItem="xb4-la-x2j" secondAttribute="trailingMargin" id="V80-4H-rP3"/>
+                                    <constraint firstAttribute="bottom" secondItem="k5n-Gq-lzZ" secondAttribute="bottom" constant="25" id="YyR-Ag-icd"/>
+                                    <constraint firstItem="k5n-Gq-lzZ" firstAttribute="top" secondItem="xb4-la-x2j" secondAttribute="top" constant="25" id="p1C-lK-Ceb"/>
+                                    <constraint firstItem="k5n-Gq-lzZ" firstAttribute="leading" secondItem="xb4-la-x2j" secondAttribute="leading" constant="25" id="uIG-TZ-2LQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="k5n-Gq-lzZ" secondAttribute="trailing" constant="25" id="xyr-cY-fwP"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <connections>
                                     <outlet property="floorLabel" destination="KDz-FF-ryK" id="F11-Vk-gwX"/>
+                                    <outlet property="imageView" destination="k5n-Gq-lzZ" id="b4a-gr-FYl"/>
                                     <outlet property="locationLabel" destination="Sar-dt-seb" id="Khd-bq-CAd"/>
                                     <segue destination="OKz-st-tFt" kind="show" id="DkE-Ky-qaN"/>
                                 </connections>

@@ -28,15 +28,15 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.getServiceRequested(withNotification:)), name:notificationName, object: nil)
         
-        self.buttons.append(ButtonStruct(floor: "1", location: "Men", serviceRequested: false))
-        self.buttons.append(ButtonStruct(floor: "1", location: "Women", serviceRequested: false))
-        self.buttons.append(ButtonStruct(floor: "2", location: "Men", serviceRequested: false))
-        self.buttons.append(ButtonStruct(floor: "2", location: "Women", serviceRequested: false))
-        self.buttons.append(ButtonStruct(floor: "2", location: "Family", serviceRequested: true))
-        self.buttons.append(ButtonStruct(floor: "3", location: "Men", serviceRequested: false))
-        self.buttons.append(ButtonStruct(floor: "3", location: "Women", serviceRequested: false))
-        self.buttons.append(ButtonStruct(floor: "3", location: "Family", serviceRequested: false))
-
+        self.buttons.append(ButtonStruct(floor: "1", location: "Men", locationType: .Men, serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "1", location: "Women", locationType: .Women, serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "2", location: "Men", locationType: .Men, serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "2", location: "Women", locationType: .Women, serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "2", location: "Family", locationType: .Family, serviceRequested: true))
+        self.buttons.append(ButtonStruct(floor: "3", location: "Men", locationType: .Men, serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "3", location: "Women", locationType: .Women, serviceRequested: false))
+        self.buttons.append(ButtonStruct(floor: "3", location: "Family", locationType: .Family, serviceRequested: false))
+        
         // Do any additional setup after loading the view.
     }
 
@@ -83,17 +83,34 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
     
         print("cellForItemAt \(indexPath.row)")
         
-        cell.locationLabel.text = self.buttons[indexPath.row].location
+//        cell.locationLabel.text = self.buttons[indexPath.row].location
         cell.floorLabel.text = self.buttons[indexPath.row].floor
         
-        cell.layer.cornerRadius = 10
+        cell.layer.cornerRadius = 15
         cell.layer.masksToBounds = true
+        
+        if (indexPath.row == 2) {
+            cell.liveButton = true
+        }
+        
+        switch self.buttons[indexPath.row].locationType {
+            case .Family:
+                cell.imageView.image = UIImage.init(named: "noun_637610_cc")
+                break
+            case .Men:
+                cell.imageView.image = UIImage.init(named: "noun_637612_cc")
+                break
+            case .Women:
+                cell.imageView.image = UIImage.init(named: "noun_637616_cc")
+                break
+        }
         
         if (self.buttons[indexPath.row].serviceRequested) {
             cell.backgroundColor = UIColor.red
         } else {
             cell.backgroundColor = UIColor.green
         }
+        cell.alpha = 0.70
 
         // Configure the cell
     

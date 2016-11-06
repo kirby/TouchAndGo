@@ -30,6 +30,7 @@
 		4E7FBD2D1DCF091400A6B4B8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FBD2C1DCF091400A6B4B8 /* CoreLocation.framework */; };
 		4E7FBD3E1DCF0D0300A6B4B8 /* AEIdfaProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBD341DCF0D0300A6B4B8 /* AEIdfaProvider.m */; };
 		4E7FBD3F1DCF0D0300A6B4B8 /* libengagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FBD3D1DCF0D0300A6B4B8 /* libengagement.a */; };
+		4E7FBD411DCFBDA200A6B4B8 /* SectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBD401DCFBDA200A6B4B8 /* SectionHeaderCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		4E7FBD3B1DCF0D0300A6B4B8 /* EngagementTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EngagementTableViewController.h; sourceTree = "<group>"; };
 		4E7FBD3C1DCF0D0300A6B4B8 /* EngagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EngagementViewController.h; sourceTree = "<group>"; };
 		4E7FBD3D1DCF0D0300A6B4B8 /* libengagement.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libengagement.a; sourceTree = "<group>"; };
+		4E7FBD401DCFBDA200A6B4B8 /* SectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				4E215CEB1DCDC6C800192433 /* AppDelegate.swift */,
 				4E215CED1DCDC6C800192433 /* ViewController.swift */,
 				4E215CEF1DCDC6C800192433 /* Main.storyboard */,
+				4E7FBD401DCFBDA200A6B4B8 /* SectionHeaderCollectionReusableView.swift */,
 				4E215CF51DCDC6C900192433 /* Assets.xcassets */,
 				4E7FBD0E1DCEFD0800A6B4B8 /* Media.xcassets */,
 				4E215CF71DCDC6C900192433 /* LaunchScreen.storyboard */,
@@ -379,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7FBD411DCFBDA200A6B4B8 /* SectionHeaderCollectionReusableView.swift in Sources */,
 				4E215CF41DCDC6C900192433 /* TouchAndGo.xcdatamodeld in Sources */,
 				4E215D201DCE4C5F00192433 /* ButtonsCollectionViewController.swift in Sources */,
 				4E795CD61DCE7BD5000BB919 /* ButtonDetailViewController.swift in Sources */,

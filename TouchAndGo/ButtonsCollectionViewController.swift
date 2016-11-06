@@ -17,9 +17,10 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
     fileprivate let reuseIdentifier = "ButtonCell"
     fileprivate let itemsPerRow: CGFloat = 2
 
-    fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 10.0, right: 20.0)
     fileprivate var buttons = [ButtonStruct]()
     fileprivate var floorButtons = [[ButtonStruct]]()
+    fileprivate let sectionHeaders = ["Floor 1", "Floor 2", "Floor 3"]
     
     fileprivate var animateCell = false
 
@@ -45,7 +46,6 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         self.buttons.append(ButtonStruct(floor: "3", location: "Men", locationType: .Men, serviceRequested: false))
         self.buttons.append(ButtonStruct(floor: "3", location: "Women", locationType: .Women, serviceRequested: false))
         self.buttons.append(ButtonStruct(floor: "3", location: "Family", locationType: .Family, serviceRequested: false))
-        
         
         self.floorButtons.append([
             ButtonStruct(floor: "1", location: "Men", locationType: .Men, serviceRequested: false),
@@ -80,7 +80,8 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
             self.postRequest(serviceRequest: true)  // pass through to Edison
         }
         
-        self.buttons[2].serviceRequested = serviceRequested
+//        self.buttons[2].serviceRequested = serviceRequested
+        self.floorButtons[1][0].serviceRequested = serviceRequested
         self.collectionView?.reloadData()
     }
     
@@ -123,7 +124,7 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
             
             view.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             
-        },completion:{completion in
+        }, completion:{completion in
             UIView.animate(withDuration: TimeInterval(animationTime), animations: { () -> Void in
                 
                 view.transform = CGAffineTransform(scaleX: 1, y: 1)
@@ -146,27 +147,29 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-//        return floorButtons.count
-        return 1
+        return floorButtons.count
+//        return 1
     }
-
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return self.buttons.count
-//        return self.floorButtons[section].count
+//        return self.buttons.count
+        return self.floorButtons[section].count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ButtonCollectionViewCell
-            
-        cell.floorLabel.text = self.buttons[indexPath.row].floor
+        
+        let button = self.floorButtons[indexPath.section][indexPath.row]
+//        let button = self.buttons[indexPath.row]
+        
+        cell.floorLabel.text = button.floor
         
         cell.layer.cornerRadius = 15
         cell.layer.masksToBounds = true
         
-        if (indexPath.row == 2) {
+        if (indexPath.section == 1 && indexPath.row == 0) {
             cell.liveButton = true
             
             if (self.animateCell) {
@@ -175,7 +178,7 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
 
                 let pulseAnimation = CABasicAnimation(keyPath: "opacity")
                 pulseAnimation.duration = 1
-                pulseAnimation.fromValue = 0
+                pulseAnimation.fromValue = 0.25
                 pulseAnimation.toValue = 1
                 pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
                 pulseAnimation.autoreverses = true
@@ -185,7 +188,7 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
             }
         }
         
-        switch self.buttons[indexPath.row].locationType {
+        switch button.locationType {
             case .Family:
                 cell.imageView.image = UIImage.init(named: "noun_637610_cc")
                 break
@@ -197,7 +200,7 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
                 break
         }
         
-        if (self.buttons[indexPath.row].serviceRequested) {
+        if (button.serviceRequested) {
             cell.backgroundColor = UIColor(colorLiteralRed: 239/255, green: 118/255, blue: 122/255, alpha: 1)
         } else {
             cell.backgroundColor = UIColor(colorLiteralRed: 73/255, green: 190/255, blue: 170/255, alpha: 1)
@@ -230,7 +233,23 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        var reusableView : UICollectionReusableView? = nil
+        
+        if (kind == UICollectionElementKindSectionHeader) {
+            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeaderCollectionReusableView
 
+            headerView.sectionHeaderLabel.text = sectionHeaders[indexPath.section]
+            
+            reusableView = headerView
+        }
+        
+        return reusableView!
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*

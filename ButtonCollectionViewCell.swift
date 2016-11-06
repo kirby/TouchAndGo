@@ -40,7 +40,7 @@ class ButtonCollectionViewCell: UICollectionViewCell {
                 })
             
             case .ended:
-                self.postRequest()
+                self.postRequest(serviceRequest: false)
                 OperationQueue.main.addOperation({ () -> Void in
                     self.backgroundColor = backgroundColor
                 })
@@ -50,9 +50,9 @@ class ButtonCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func postRequest()
+    func postRequest(serviceRequest: Bool)
     {
-        let url:NSURL = NSURL(string: "http://localhost:1880/touchAndGo")!
+        let url:NSURL = NSURL(string: "http://touchandgo.ngrok.io/serviceRequested")!
         let session = URLSession.shared
         
         let request = NSMutableURLRequest(url: url as URL)

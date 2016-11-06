@@ -57,8 +57,51 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         
         print("serviceRequested = \(serviceRequested)")
         
+        if(serviceRequested == true) {
+            self.postRequest(serviceRequest: true)
+        }
+        
         self.buttons[2].serviceRequested = serviceRequested
         self.collectionView?.reloadData()
+    }
+    
+    func postRequest(serviceRequest: Bool)
+    {
+        let url:NSURL = NSURL(string: "http://touchandgo.ngrok.io/serviceRequested")!
+        let session = URLSession.shared
+        
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "POST"
+        
+        let params = [ "serviceRequested": false ]
+        do {
+            try request.httpBody = JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
+        } catch {
+            print("error")
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTask(with: request as URLRequest) {
+            (data, response, error) in
+            
+            guard let _:NSData = data as NSData?, let _:URLResponse = response, error == nil else {
+                print("error")
+                return
+            }
+            
+            let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            print("postRequest response = \(dataString!)")
+            
+//            OperationQueue.main.addOperation({ () -> Void in
+//                self.backgroundColor = UIColor.green
+//            })
+            
+        }
+        
+        task.resume()
+        
     }
 
     /*
@@ -75,7 +118,7 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 3
     }
 
 
@@ -113,7 +156,6 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         } else {
             cell.backgroundColor = UIColor(colorLiteralRed: 73/255, green: 190/255, blue: 170/255, alpha: 1)
         }
-//        cell.alpha = 0.70
     
         return cell
     }

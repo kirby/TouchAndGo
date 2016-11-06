@@ -21,6 +21,15 @@
 		4E215D241DCE582500192433 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E215D231DCE582500192433 /* ButtonCollectionViewCell.swift */; };
 		4E795CD61DCE7BD5000BB919 /* ButtonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E795CD51DCE7BD5000BB919 /* ButtonDetailViewController.swift */; };
 		4E7FBD0F1DCEFD0800A6B4B8 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FBD0E1DCEFD0800A6B4B8 /* Media.xcassets */; };
+		4E7FBD211DCF08DB00A6B4B8 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FBD201DCF08DB00A6B4B8 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4E7FBD231DCF08E000A6B4B8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FBD221DCF08E000A6B4B8 /* SystemConfiguration.framework */; };
+		4E7FBD251DCF08E800A6B4B8 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FBD241DCF08E800A6B4B8 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4E7FBD271DCF08F000A6B4B8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FBD261DCF08F000A6B4B8 /* CoreTelephony.framework */; };
+		4E7FBD291DCF08F700A6B4B8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FBD281DCF08F700A6B4B8 /* CFNetwork.framework */; };
+		4E7FBD2B1DCF090900A6B4B8 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FBD2A1DCF090900A6B4B8 /* libxml2.tbd */; };
+		4E7FBD2D1DCF091400A6B4B8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FBD2C1DCF091400A6B4B8 /* CoreLocation.framework */; };
+		4E7FBD3E1DCF0D0300A6B4B8 /* AEIdfaProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBD341DCF0D0300A6B4B8 /* AEIdfaProvider.m */; };
+		4E7FBD3F1DCF0D0300A6B4B8 /* libengagement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7FBD3D1DCF0D0300A6B4B8 /* libengagement.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +71,24 @@
 		4E215D231DCE582500192433 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonCollectionViewCell.swift; path = ../ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E795CD51DCE7BD5000BB919 /* ButtonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonDetailViewController.swift; sourceTree = "<group>"; };
 		4E7FBD0E1DCEFD0800A6B4B8 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = "../../../../Documents/2016 SW Smart City Kirkland/app2/Media.xcassets"; sourceTree = "<group>"; };
+		4E7FBD201DCF08DB00A6B4B8 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		4E7FBD221DCF08E000A6B4B8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4E7FBD241DCF08E800A6B4B8 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		4E7FBD261DCF08F000A6B4B8 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		4E7FBD281DCF08F700A6B4B8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4E7FBD2A1DCF090900A6B4B8 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		4E7FBD2C1DCF091400A6B4B8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4E7FBD2E1DCF096600A6B4B8 /* TouchAndGo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchAndGo-Bridging-Header.h"; sourceTree = "<group>"; };
+		4E7FBD331DCF0D0300A6B4B8 /* AEIdfaProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEIdfaProvider.h; sourceTree = "<group>"; };
+		4E7FBD341DCF0D0300A6B4B8 /* AEIdfaProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEIdfaProvider.m; sourceTree = "<group>"; };
+		4E7FBD361DCF0D0300A6B4B8 /* AEModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEModule.h; sourceTree = "<group>"; };
+		4E7FBD371DCF0D0300A6B4B8 /* AEPushMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEPushMessage.h; sourceTree = "<group>"; };
+		4E7FBD381DCF0D0300A6B4B8 /* AEStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEStorage.h; sourceTree = "<group>"; };
+		4E7FBD391DCF0D0300A6B4B8 /* AEUserNotificationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEUserNotificationHandler.h; sourceTree = "<group>"; };
+		4E7FBD3A1DCF0D0300A6B4B8 /* EngagementAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EngagementAgent.h; sourceTree = "<group>"; };
+		4E7FBD3B1DCF0D0300A6B4B8 /* EngagementTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EngagementTableViewController.h; sourceTree = "<group>"; };
+		4E7FBD3C1DCF0D0300A6B4B8 /* EngagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EngagementViewController.h; sourceTree = "<group>"; };
+		4E7FBD3D1DCF0D0300A6B4B8 /* libengagement.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libengagement.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +96,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7FBD3F1DCF0D0300A6B4B8 /* libengagement.a in Frameworks */,
+				4E7FBD2D1DCF091400A6B4B8 /* CoreLocation.framework in Frameworks */,
+				4E7FBD2B1DCF090900A6B4B8 /* libxml2.tbd in Frameworks */,
+				4E7FBD291DCF08F700A6B4B8 /* CFNetwork.framework in Frameworks */,
+				4E7FBD271DCF08F000A6B4B8 /* CoreTelephony.framework in Frameworks */,
+				4E7FBD251DCF08E800A6B4B8 /* AdSupport.framework in Frameworks */,
+				4E7FBD231DCF08E000A6B4B8 /* SystemConfiguration.framework in Frameworks */,
+				4E7FBD211DCF08DB00A6B4B8 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,10 +127,13 @@
 		4E215CDF1DCDC6C800192433 = {
 			isa = PBXGroup;
 			children = (
+				4E7FBD311DCF0D0300A6B4B8 /* EngagementSDK */,
+				4E7FBD2E1DCF096600A6B4B8 /* TouchAndGo-Bridging-Header.h */,
 				4E215CEA1DCDC6C800192433 /* TouchAndGo */,
 				4E215D021DCDC6C900192433 /* TouchAndGoTests */,
 				4E215D0D1DCDC6C900192433 /* TouchAndGoUITests */,
 				4E215CE91DCDC6C800192433 /* Products */,
+				4E7FBD1F1DCF08DB00A6B4B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +184,53 @@
 				4E215D101DCDC6C900192433 /* Info.plist */,
 			);
 			path = TouchAndGoUITests;
+			sourceTree = "<group>";
+		};
+		4E7FBD1F1DCF08DB00A6B4B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E7FBD2C1DCF091400A6B4B8 /* CoreLocation.framework */,
+				4E7FBD2A1DCF090900A6B4B8 /* libxml2.tbd */,
+				4E7FBD281DCF08F700A6B4B8 /* CFNetwork.framework */,
+				4E7FBD261DCF08F000A6B4B8 /* CoreTelephony.framework */,
+				4E7FBD241DCF08E800A6B4B8 /* AdSupport.framework */,
+				4E7FBD221DCF08E000A6B4B8 /* SystemConfiguration.framework */,
+				4E7FBD201DCF08DB00A6B4B8 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E7FBD311DCF0D0300A6B4B8 /* EngagementSDK */ = {
+			isa = PBXGroup;
+			children = (
+				4E7FBD321DCF0D0300A6B4B8 /* Classes */,
+				4E7FBD351DCF0D0300A6B4B8 /* Headers */,
+				4E7FBD3D1DCF0D0300A6B4B8 /* libengagement.a */,
+			);
+			path = EngagementSDK;
+			sourceTree = "<group>";
+		};
+		4E7FBD321DCF0D0300A6B4B8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4E7FBD331DCF0D0300A6B4B8 /* AEIdfaProvider.h */,
+				4E7FBD341DCF0D0300A6B4B8 /* AEIdfaProvider.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4E7FBD351DCF0D0300A6B4B8 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				4E7FBD361DCF0D0300A6B4B8 /* AEModule.h */,
+				4E7FBD371DCF0D0300A6B4B8 /* AEPushMessage.h */,
+				4E7FBD381DCF0D0300A6B4B8 /* AEStorage.h */,
+				4E7FBD391DCF0D0300A6B4B8 /* AEUserNotificationHandler.h */,
+				4E7FBD3A1DCF0D0300A6B4B8 /* EngagementAgent.h */,
+				4E7FBD3B1DCF0D0300A6B4B8 /* EngagementTableViewController.h */,
+				4E7FBD3C1DCF0D0300A6B4B8 /* EngagementViewController.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +385,7 @@
 				4E215CEE1DCDC6C800192433 /* ViewController.swift in Sources */,
 				4E215CEC1DCDC6C800192433 /* AppDelegate.swift in Sources */,
 				4E215D221DCE54B200192433 /* ButtonStruct.swift in Sources */,
+				4E7FBD3E1DCF0D0300A6B4B8 /* AEIdfaProvider.m in Sources */,
 				4E215D241DCE582500192433 /* ButtonCollectionViewCell.swift in Sources */,
 				4E215D1E1DCDE23300192433 /* SwiftyJSON.swift in Sources */,
 			);
@@ -457,8 +543,13 @@
 				DEVELOPMENT_TEAM = 5JV7JLRC6D;
 				INFOPLIST_FILE = TouchAndGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EngagementSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.impossibleindustries.TouchAndGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/TouchAndGo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -471,8 +562,13 @@
 				DEVELOPMENT_TEAM = 5JV7JLRC6D;
 				INFOPLIST_FILE = TouchAndGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EngagementSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.impossibleindustries.TouchAndGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/TouchAndGo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

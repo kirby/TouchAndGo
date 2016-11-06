@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        Endpoint=TouchNGo.device.mobileengagement.windows.net;SdkKey=fe4cb4ab9aa49e1da88d3434f1fd0a58;AppId=cut000501
+        EngagementAgent.init("Endpoint=TouchNGo.device.mobileengagement.windows.net;SdkKey=fe4cb4ab9aa49e1da88d3434f1fd0a58;AppId=cut000501")
+
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             // actions based on whether notifications were authorized or not

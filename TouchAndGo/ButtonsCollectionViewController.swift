@@ -35,7 +35,7 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
 //        $color4: rgba(73, 220, 177, 1);   // green
 //        $color5: rgba(238, 184, 104, 1);  // yellow
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.getServiceRequested(withNotification:)), name:notificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ButtonsCollectionViewController.getServiceRequested(withNotification:)), name:notificationName, object: nil)
         
         self.buttons.append(ButtonStruct(floor: "1", location: "Men", locationType: .Men, serviceRequested: false))
         self.buttons.append(ButtonStruct(floor: "1", location: "Women", locationType: .Women, serviceRequested: false))

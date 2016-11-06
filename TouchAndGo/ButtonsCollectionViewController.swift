@@ -19,6 +19,8 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
 
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     fileprivate var buttons = [ButtonStruct]()
+    
+    fileprivate var animateCell = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +60,8 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         print("serviceRequested = \(serviceRequested)")
         
         if(serviceRequested == true) {
-            self.postRequest(serviceRequest: true)
+            self.animateCell = true
+            self.postRequest(serviceRequest: true)  // pass through to Edison
         }
         
         self.buttons[2].serviceRequested = serviceRequested
@@ -93,15 +96,9 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
             
             let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             print("postRequest response = \(dataString!)")
-            
-//            OperationQueue.main.addOperation({ () -> Void in
-//                self.backgroundColor = UIColor.green
-//            })
-            
         }
         
         task.resume()
-        
     }
 
     /*
@@ -137,6 +134,19 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         
         if (indexPath.row == 2) {
             cell.liveButton = true
+            
+            if (self.animateCell) {
+
+                let pulseAnimation = CABasicAnimation(keyPath: "opacity")
+                pulseAnimation.duration = 1
+                pulseAnimation.fromValue = 0
+                pulseAnimation.toValue = 1
+                pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                pulseAnimation.autoreverses = true
+                pulseAnimation.repeatCount = 2
+                cell.layer.add(pulseAnimation, forKey: "animateOpacity")
+
+            }
         }
         
         switch self.buttons[indexPath.row].locationType {

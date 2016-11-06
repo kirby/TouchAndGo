@@ -41,10 +41,10 @@
         <scene sceneID="ANi-Le-ZkO">
             <objects>
                 <collectionViewController title="Touch and Go" id="UFR-kl-uC0" customClass="ButtonsCollectionViewController" customModule="TouchAndGo" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="48f-t9-Xcn">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" dataMode="prototypes" id="48f-t9-Xcn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.27058823529411763" green="0.41176470588235292" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2aV-iJ-Dhd">
                             <size key="itemSize" width="150" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -52,7 +52,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.25" contentMode="center" reuseIdentifier="ButtonCell" id="xb4-la-x2j" customClass="ButtonCollectionViewCell" customModule="TouchAndGo" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonCell" id="xb4-la-x2j" customClass="ButtonCollectionViewCell" customModule="TouchAndGo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -68,11 +68,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDz-FF-ryK">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDz-FF-ryK">
                                             <rect key="frame" x="8" y="8" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k5n-Gq-lzZ">
@@ -81,9 +80,12 @@
                                     </subviews>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="KDz-FF-ryK" firstAttribute="top" secondItem="xb4-la-x2j" secondAttribute="topMargin" id="1Wq-ek-Lwy"/>
                                     <constraint firstItem="Sar-dt-seb" firstAttribute="centerY" secondItem="xb4-la-x2j" secondAttribute="centerY" id="1g0-4j-iyh"/>
                                     <constraint firstItem="Sar-dt-seb" firstAttribute="leading" secondItem="xb4-la-x2j" secondAttribute="leadingMargin" id="6kD-Ox-lJo"/>
                                     <constraint firstItem="Sar-dt-seb" firstAttribute="centerX" secondItem="xb4-la-x2j" secondAttribute="centerX" id="GNO-Of-sen"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="KDz-FF-ryK" secondAttribute="trailing" constant="92" id="HwM-Cc-wPa"/>
+                                    <constraint firstItem="KDz-FF-ryK" firstAttribute="leading" secondItem="Sar-dt-seb" secondAttribute="leading" id="Lfj-RK-pnv"/>
                                     <constraint firstItem="Sar-dt-seb" firstAttribute="trailing" secondItem="xb4-la-x2j" secondAttribute="trailingMargin" id="V80-4H-rP3"/>
                                     <constraint firstAttribute="bottom" secondItem="k5n-Gq-lzZ" secondAttribute="bottom" constant="25" id="YyR-Ag-icd"/>
                                     <constraint firstItem="k5n-Gq-lzZ" firstAttribute="top" secondItem="xb4-la-x2j" secondAttribute="top" constant="25" id="p1C-lK-Ceb"/>
@@ -104,7 +106,7 @@
                             <outlet property="delegate" destination="UFR-kl-uC0" id="d6o-la-eTV"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="L04-sZ-yeR">
+                    <navigationItem key="navigationItem" title="Touch &amp; Go" id="L04-sZ-yeR">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fk3-uN-mK2"/>
                     </navigationItem>
                 </collectionViewController>

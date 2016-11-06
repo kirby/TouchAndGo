@@ -26,6 +26,12 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
+//        $color1: rgba(239, 118, 122, 1);  // red
+//        $color2: rgba(69, 105, 144, 1);   // blue
+//        $color3: rgba(73, 190, 170, 1);   // light green
+//        $color4: rgba(73, 220, 177, 1);   // green
+//        $color5: rgba(238, 184, 104, 1);  // yellow
+        
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.getServiceRequested(withNotification:)), name:notificationName, object: nil)
         
         self.buttons.append(ButtonStruct(floor: "1", location: "Men", locationType: .Men, serviceRequested: false))
@@ -80,10 +86,7 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ButtonCollectionViewCell
-    
-        print("cellForItemAt \(indexPath.row)")
-        
-//        cell.locationLabel.text = self.buttons[indexPath.row].location
+            
         cell.floorLabel.text = self.buttons[indexPath.row].floor
         
         cell.layer.cornerRadius = 15
@@ -106,13 +109,11 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         }
         
         if (self.buttons[indexPath.row].serviceRequested) {
-            cell.backgroundColor = UIColor.red
+            cell.backgroundColor = UIColor(colorLiteralRed: 239/255, green: 118/255, blue: 122/255, alpha: 1)
         } else {
-            cell.backgroundColor = UIColor.green
+            cell.backgroundColor = UIColor(colorLiteralRed: 73/255, green: 190/255, blue: 170/255, alpha: 1)
         }
-        cell.alpha = 0.70
-
-        // Configure the cell
+//        cell.alpha = 0.70
     
         return cell
     }

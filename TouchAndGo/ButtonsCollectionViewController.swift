@@ -19,10 +19,7 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
 
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     fileprivate var buttons = [ButtonStruct]()
-    
-    fileprivate var buttons1 = [ButtonStruct]()
-    fileprivate var buttons2 = [ButtonStruct]()
-    fileprivate var buttons3 = [ButtonStruct]()
+    fileprivate var floorButtons = [[ButtonStruct]]()
     
     fileprivate var animateCell = false
 
@@ -48,6 +45,21 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         self.buttons.append(ButtonStruct(floor: "3", location: "Men", locationType: .Men, serviceRequested: false))
         self.buttons.append(ButtonStruct(floor: "3", location: "Women", locationType: .Women, serviceRequested: false))
         self.buttons.append(ButtonStruct(floor: "3", location: "Family", locationType: .Family, serviceRequested: false))
+        
+        
+        self.floorButtons.append([
+            ButtonStruct(floor: "1", location: "Men", locationType: .Men, serviceRequested: false),
+            ButtonStruct(floor: "2", location: "Women", locationType: .Women, serviceRequested: false)])
+        
+        self.floorButtons.append([
+            ButtonStruct(floor: "2", location: "Men", locationType: .Men, serviceRequested: false),
+            ButtonStruct(floor: "2", location: "Women", locationType: .Women, serviceRequested: false),
+            ButtonStruct(floor: "2", location: "Family", locationType: .Family, serviceRequested: true)])
+
+        self.floorButtons.append([
+            ButtonStruct(floor: "3", location: "Men", locationType: .Men, serviceRequested: false),
+            ButtonStruct(floor: "3", location: "Women", locationType: .Women, serviceRequested: false),
+            ButtonStruct(floor: "3", location: "Family", locationType: .Family, serviceRequested: false)])
         
         // Do any additional setup after loading the view.
     }
@@ -134,16 +146,19 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+//        return floorButtons.count
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return self.buttons.count
+//        return self.floorButtons[section].count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ButtonCollectionViewCell
             
         cell.floorLabel.text = self.buttons[indexPath.row].floor

@@ -97,7 +97,6 @@
                                     <outlet property="floorLabel" destination="KDz-FF-ryK" id="F11-Vk-gwX"/>
                                     <outlet property="imageView" destination="k5n-Gq-lzZ" id="b4a-gr-FYl"/>
                                     <outlet property="locationLabel" destination="Sar-dt-seb" id="Khd-bq-CAd"/>
-                                    <segue destination="OKz-st-tFt" kind="show" id="DkE-Ky-qaN"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

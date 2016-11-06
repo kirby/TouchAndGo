@@ -106,7 +106,7 @@
                             <outlet property="delegate" destination="UFR-kl-uC0" id="d6o-la-eTV"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Touch and Go" id="L04-sZ-yeR">
+                    <navigationItem key="navigationItem" title="Touch N Go" id="L04-sZ-yeR">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fk3-uN-mK2"/>
                     </navigationItem>
                 </collectionViewController>

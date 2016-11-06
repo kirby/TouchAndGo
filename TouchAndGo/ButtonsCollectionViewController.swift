@@ -20,6 +20,10 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     fileprivate var buttons = [ButtonStruct]()
     
+    fileprivate var buttons1 = [ButtonStruct]()
+    fileprivate var buttons2 = [ButtonStruct]()
+    fileprivate var buttons3 = [ButtonStruct]()
+    
     fileprivate var animateCell = false
 
     override func viewDidLoad() {
@@ -76,7 +80,7 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         let request = NSMutableURLRequest(url: url as URL)
         request.httpMethod = "POST"
         
-        let params = [ "serviceRequested": false ]
+        let params = [ "serviceRequested": serviceRequest ]
         do {
             try request.httpBody = JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
         } catch {
@@ -99,6 +103,21 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
         }
         
         task.resume()
+    }
+    
+    func animationScaleEffect(view:UIView,animationTime:Float) {
+        
+        UIView.animate(withDuration: TimeInterval(animationTime), animations: {
+            
+            view.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            
+        },completion:{completion in
+            UIView.animate(withDuration: TimeInterval(animationTime), animations: { () -> Void in
+                
+                view.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })
+        })
+        
     }
 
     /*
@@ -136,6 +155,8 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
             cell.liveButton = true
             
             if (self.animateCell) {
+                
+                self.animationScaleEffect(view: cell, animationTime: 1.5)
 
                 let pulseAnimation = CABasicAnimation(keyPath: "opacity")
                 pulseAnimation.duration = 1

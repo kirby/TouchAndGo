@@ -80,7 +80,7 @@ class ButtonCollectionViewCell: UICollectionViewCell {
             print("postRequest response = \(dataString!)")
             
             OperationQueue.main.addOperation({ () -> Void in
-                self.backgroundColor = UIColor.green
+                self.backgroundColor = UIColor(colorLiteralRed: 73/255, green: 190/255, blue: 170/255, alpha: 1)
             })
             
         }

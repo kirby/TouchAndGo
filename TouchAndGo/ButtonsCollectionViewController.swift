@@ -72,16 +72,23 @@ class ButtonsCollectionViewController: UICollectionViewController, UICollectionV
     func getServiceRequested(withNotification : NSNotification) {
         
         let serviceRequested = withNotification.object as! Bool
+//        let serviceActivity = [ "serviceRequested" : serviceRequested ]
+//        EngagementAgent.shared().startActivity("serviceRequested", extras: serviceActivity)
         
         print("serviceRequested = \(serviceRequested)")
         
-        if(serviceRequested == true) {
+        if (serviceRequested == true) {
+            EngagementAgent.shared().startActivity("serviceRequested", extras: nil)
             self.animateCell = true
             self.postRequest(serviceRequest: true)  // pass through to Edison
+        } else {
+            EngagementAgent.shared().startActivity("serviceCompleted", extras: nil)
         }
-        
 //        self.buttons[2].serviceRequested = serviceRequested
         self.floorButtons[1][0].serviceRequested = serviceRequested
+        
+        EngagementAgent.shared().endActivity()
+        
         self.collectionView?.reloadData()
     }
     
